@@ -4,6 +4,10 @@ namespace File\Analyzer\sources;
 
 use File\Analyzer\exceptions\InvalidConfigException;
 
+/**
+ * Модуль источника файлов из локальной ФС
+ * @package File\Analyzer\sources
+ */
 class LocalFileSource implements IFileSource
 {
     /**

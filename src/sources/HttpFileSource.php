@@ -1,9 +1,11 @@
 <?php
 
-
 namespace File\Analyzer\sources;
 
-
+/**
+ * Модуль источника файлов для получения файла по http/https
+ * @package File\Analyzer\sources
+ */
 class HttpFileSource extends LocalFileSource
 {
     const CONTENT_TYPE_HEADER = 'Content-Type';
@@ -11,6 +13,9 @@ class HttpFileSource extends LocalFileSource
 
     private array $headers = [];
 
+    /**
+     * @return array Массив заголовков удалённого(http) файла
+     */
     private function getHeaders(): array
     {
         if (empty($this->headers)) {
@@ -37,6 +42,9 @@ class HttpFileSource extends LocalFileSource
         return $this->headers;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getFileSize(): int
     {
         if (array_key_exists(self::CONTENT_LENGTH_HEADER, $this->getHeaders())) {
@@ -45,6 +53,9 @@ class HttpFileSource extends LocalFileSource
         return false;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getFileMimeType(): string
     {
         if (array_key_exists(self::CONTENT_TYPE_HEADER, $this->getHeaders())) {

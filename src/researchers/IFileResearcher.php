@@ -2,6 +2,10 @@
 
 namespace File\Analyzer\researchers;
 
+/**
+ * Интерфейс исследователя файлов
+ * @package File\Analyzer\researchers
+ */
 interface IFileResearcher
 {
     /**

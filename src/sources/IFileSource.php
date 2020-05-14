@@ -2,6 +2,10 @@
 
 namespace File\Analyzer\sources;
 
+/**
+ * Интерфейс источника файлов
+ * @package File\Analyzer\sources
+ */
 interface IFileSource
 {
     /**

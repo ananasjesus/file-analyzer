@@ -50,6 +50,9 @@ class Analyzer
         $this->researcher = new $this->config['researcher']['class']($this->config['researcher']['config']);
     }
 
+    /**
+     * @return array Результат анализа файла
+     */
     public function analyze()
     {
         $filePath = $this->source->getFilePath();
